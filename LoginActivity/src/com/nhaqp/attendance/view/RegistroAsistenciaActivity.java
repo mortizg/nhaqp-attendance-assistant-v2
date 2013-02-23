@@ -99,7 +99,8 @@ public class RegistroAsistenciaActivity extends ListActivity {
 		menu.getItem(0).setEnabled(true);
         menu.getItem(1).setEnabled(true);
         menu.getItem(2).setEnabled(true);
-	    if (!estaEnHorario){
+        
+	    if (!estaEnHorario || listAsistencia.length==0){
 	        menu.getItem(0).setEnabled(false);
 	        menu.getItem(1).setEnabled(false);
 	        menu.getItem(2).setEnabled(false);
@@ -394,7 +395,7 @@ public class RegistroAsistenciaActivity extends ListActivity {
 			String respuesta = "";
 	
 			String dato_enviar="";
-	
+			/*
 			for (int i = 0; i < listaAlumnosAsisten.length; i++) {
 				dato_enviar = dato_enviar+idProfesor+"|";
 				dato_enviar = dato_enviar+idCurso+"|";
@@ -441,7 +442,7 @@ public class RegistroAsistenciaActivity extends ListActivity {
 				Log.v("ASIS", e.getMessage());
 			}
 			
-			
+			*/
 	
 			if(respuesta.equals("")){
 				DBAsistencia dbAsis = new DBAsistencia(this);
