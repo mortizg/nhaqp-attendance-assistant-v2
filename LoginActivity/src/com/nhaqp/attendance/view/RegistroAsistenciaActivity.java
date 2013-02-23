@@ -96,7 +96,9 @@ public class RegistroAsistenciaActivity extends ListActivity {
 	@Override
 	public boolean onPrepareOptionsMenu (Menu menu) {
 		Log.v("ASIS","estaEnHorario: "+estaEnHorario);
-
+		menu.getItem(0).setEnabled(true);
+        menu.getItem(1).setEnabled(true);
+        menu.getItem(2).setEnabled(true);
 	    if (!estaEnHorario){
 	        menu.getItem(0).setEnabled(false);
 	        menu.getItem(1).setEnabled(false);
@@ -107,7 +109,7 @@ public class RegistroAsistenciaActivity extends ListActivity {
 		    if(FaltanGuardar()){
 		    	menu.getItem(1).setEnabled(false);
 		    }
-		    if(!FaltanEnviar()){
+		    else if(!FaltanEnviar()){
 		    	menu.getItem(0).setEnabled(false);
 		    	menu.getItem(1).setEnabled(false);
 		    	menu.getItem(2).setEnabled(false);

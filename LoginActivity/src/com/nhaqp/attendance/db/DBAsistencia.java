@@ -82,7 +82,7 @@ public class DBAsistencia {
         Cursor mCursor =
                 db.query(true, DATABASE_TABLE, new String[] {KEY_ROWID,
                 KEY_IDPROFESOR, KEY_IDCURSO, KEY_IDALUMNO, KEY_IDGRUPO, KEY_FECHA, KEY_TIPOASIST, KEY_FLGENSERVIDOR}, KEY_ROWID + "=" + rowId, null,
-                null, null, null, null, null);
+                null, null, null, null);
         if (mCursor != null) {
             mCursor.moveToFirst();
         }
