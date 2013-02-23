@@ -395,7 +395,7 @@ public class RegistroAsistenciaActivity extends ListActivity {
 			String respuesta = "";
 	
 			String dato_enviar="";
-			/*
+			
 			for (int i = 0; i < listaAlumnosAsisten.length; i++) {
 				dato_enviar = dato_enviar+idProfesor+"|";
 				dato_enviar = dato_enviar+idCurso+"|";
@@ -442,7 +442,7 @@ public class RegistroAsistenciaActivity extends ListActivity {
 				Log.v("ASIS", e.getMessage());
 			}
 			
-			*/
+			
 	
 			if(respuesta.equals("")){
 				DBAsistencia dbAsis = new DBAsistencia(this);
