@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="icono" >Icono</string>
+    <string name="app_name" size="3dp" >Registro de Asistencia</string>
+    <string name="principal_asistencia">Asistencia</string>
+    <string name="principal_mensajes">Mensajes</string>
+    <string name="principal_reportes">Reportes</string>
+    <string name="principal_opciones">Opciones</string>
+    <string-array name="asistencia_actividades">
+        <item >Registrar Asistencia</item>
+        <item >Modificar Asistencia</item>
+        <item >Anhadir Justificaciones</item>
+    </string-array>
+    
+
+</resources>

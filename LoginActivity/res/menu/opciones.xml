@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/menuitem_sincronizar"
+        android:title="Sincronizar"
+        android:icon="@android:drawable/ic_menu_manage" 
+        android:showAsAction="ifRoom">
+    </item>
+    <item android:id="@+id/menuitem_ayuda"
+        android:title="Ayuda"
+        android:icon="@android:drawable/ic_menu_help" 
+        android:showAsAction="ifRoom">
+    </item>
+
+</menu>
