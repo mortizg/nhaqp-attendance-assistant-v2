@@ -404,7 +404,7 @@ public class RegistroAsistenciaActivity extends ListActivity {
 	
 			}
 	
-			/*
+			
 	
 			dato_enviar=dato_enviar.substring(0, dato_enviar.length()-1);
 	
@@ -438,7 +438,7 @@ public class RegistroAsistenciaActivity extends ListActivity {
 			{
 				Log.v("ASIS", e.getMessage());
 			}
-			*/
+			
 			
 	
 			if(respuesta.equals("")){
