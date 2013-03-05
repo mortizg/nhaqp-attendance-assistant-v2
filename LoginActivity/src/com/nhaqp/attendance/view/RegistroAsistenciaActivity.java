@@ -383,7 +383,7 @@ public class RegistroAsistenciaActivity extends ListActivity {
         tmpCursor.moveToFirst();
         estaEnElHorario = tmpCursor.getInt(0);
         tmpCursor.close();
-        dbh.close();
+        
         
         if(estaEnElHorario >0){
 
@@ -396,6 +396,39 @@ public class RegistroAsistenciaActivity extends ListActivity {
 	
 			String dato_enviar="";
 			
+			if(dbh == null){
+				dbh= new DBHelper(this);
+			}	        
+	        
+	        Cursor tmpAsistenciaCursor= dbh.getReadableDatabase().rawQuery("select asi.* from alumno a "+
+												                    "inner join matricula m on a.idAlumno = m.idAlumno "+
+												                    "inner join grupoCurso gc on m.idGrupoCurso = gc.idGrupoCurso "+ 
+												                    "inner join horario h on gc.idHorario = h.idHorario "+  
+												                    "left join asistencia asi on a.idAlumno = asi.idAlumno "+
+												                    "and asi.idCurso = gc.idCurso and asi.idGrupo = gc.idGrupo "+
+												                    "and substr(asi.fecha,1,10) = '"+fecha+"' "+
+												                    "where time('"+hora+"') between time(h.horaInicio) and time(h.horaFin) "+ 
+												                    "and h.dia ="+dia, null);
+	        
+	        tmpAsistenciaCursor.moveToFirst();        
+	        while (tmpAsistenciaCursor.isAfterLast()==false)
+	        {	            
+	            dato_enviar = dato_enviar+tmpAsistenciaCursor.getInt(1)+"|";
+				dato_enviar = dato_enviar+tmpAsistenciaCursor.getInt(2)+"|";
+				dato_enviar = dato_enviar+tmpAsistenciaCursor.getInt(3)+"|";
+				dato_enviar = dato_enviar+tmpAsistenciaCursor.getInt(4)+"|";
+				dato_enviar = dato_enviar+tmpAsistenciaCursor.getString(5)+"|";
+				dato_enviar = dato_enviar+tmpAsistenciaCursor.getString(6);
+				dato_enviar = dato_enviar +"#";
+	            
+	            tmpAsistenciaCursor.moveToNext();
+	        }        
+	        tmpAsistenciaCursor.close();
+	        dbh.close();
+	        dato_enviar=dato_enviar.substring(0, dato_enviar.length()-1);
+	        Log.v("SAV", "candena: "+dato_enviar);
+			
+			/*
 			for (int i = 0; i < listaAlumnosAsisten.length; i++) {
 				dato_enviar = dato_enviar+idProfesor+"|";
 				dato_enviar = dato_enviar+idCurso+"|";
@@ -440,7 +473,7 @@ public class RegistroAsistenciaActivity extends ListActivity {
 			catch (Exception e) 
 			{
 				Log.v("ASIS", e.getMessage());
-			}
+			}*/
 			
 			
 	

@@ -87,7 +87,7 @@ public class MenuActivity  extends Activity {
 		public class SynWebservice extends AsyncTask<String, Void, Object> {
 			protected Integer doInBackground(String... args) {
 				Log.v("ASIS", "SynWebservice");
-				
+				/*
 				CargarDatosWS ws=new CargarDatosWS(Integer.parseInt(idProfesor));
 				//Se invoca nuestro metodo
 				listAlumnos=ws.syncAlumnos();
@@ -97,14 +97,10 @@ public class MenuActivity  extends Activity {
 				listGrupoCursos=ws.syncGrupoCursos();
 				listMatriculas=ws.syncMatriculas();
 				listAsistencias=ws.syncAsistencias();
-				
+				*/
 				//para probar sin server
-				//generarDatosPrueba();
+				generarDatosPrueba();
 				
-			/*	DBBorrarTablas db=new DBBorrarTablas(MenuActivity.this);
-				db.open();
-				db.dropTables();
-				db.close();*/
 				DBLlenarTablas dbt= new DBLlenarTablas(MenuActivity.this);
 				Log.v("ASIS", "LUEGO DE LLENAR TABLAS");
 				dbt.TruncarTablas();
