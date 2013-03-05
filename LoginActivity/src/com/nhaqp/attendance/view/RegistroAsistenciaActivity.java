@@ -445,7 +445,7 @@ public class RegistroAsistenciaActivity extends ListActivity {
 			dato_enviar=dato_enviar.substring(0, dato_enviar.length()-1);
 	
 			Log.v("SAV", "candena: "+dato_enviar);
-	
+			*/
 			
 			SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
 	
@@ -473,7 +473,7 @@ public class RegistroAsistenciaActivity extends ListActivity {
 			catch (Exception e) 
 			{
 				Log.v("ASIS", e.getMessage());
-			}*/
+			}
 			
 			
 	

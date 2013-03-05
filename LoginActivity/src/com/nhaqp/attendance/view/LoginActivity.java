@@ -58,7 +58,7 @@ public class LoginActivity extends Activity {
 		final String SOAP_ACTION = "http://localhost/login";
 		final String URL="http://10.0.2.2:8090/Servicios.asmx";
 		
-		/*
+		
 		SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
 				
 		request.addProperty("codigo", login); 
@@ -87,10 +87,10 @@ public class LoginActivity extends Activity {
 		{
 			e.printStackTrace();
 		}
-		*/
+		
 		
 		//PARA PROBAR SIN SERVER
-		resultado = "1|profesor";
+		//resultado = "1|profesor";
 
     	
     	
